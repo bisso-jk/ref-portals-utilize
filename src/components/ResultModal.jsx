@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 
 
-const ResultModal = forwardRef(({ result, targetTime }, ref) => {
+const ResultModal = forwardRef(({ result, targetTime, modalClose }, ref) => {
 
     return (
         <dialog ref={ref} className={"result-modal"} >
@@ -13,7 +13,7 @@ const ResultModal = forwardRef(({ result, targetTime }, ref) => {
                 You stopped the time with <strong>X seconds left</strong>.
             </p>
             <form method="dialog">
-                <button>닫기</button>
+                <button onClick={modalClose}>닫기</button>
             </form>
         </dialog>
     )

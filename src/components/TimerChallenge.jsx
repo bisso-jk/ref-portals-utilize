@@ -21,11 +21,18 @@ const TimerChallenge = ({ title, targetTime }) => {
 
     const handleStop = () => {
         clearTimeout(timer.current);
-    }
+        
+        // TODO: stop action
+    };
+
+    const handleModalClick = () => {
+        setTimerExpired(false);
+        setTimerStarted(false);
+    };
 
     return (
         <>
-            <ResultModal ref={dialog} result={'lost'} targetTime={targetTime} />
+            <ResultModal ref={dialog} result={'lost'} targetTime={targetTime} modalClose={handleModalClick} />
             <section className={"challenge"}>
                 <h2>{title}</h2>
                 <p className={"challenge-time"}>
